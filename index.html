@@ -6,7 +6,15 @@
 
     <title>Syeda Sanobar | Software Engineer</title>
 
+    <meta name="description"
+          content="Portfolio of Syeda Sanobar — Software Engineer and Web Developer.">
+
     <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -14,447 +22,791 @@
             scroll-behavior: smooth;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b1120;
-            color: #e5e7eb;
-            line-height: 1.6;
+        :root {
+            --background: #070b14;
+            --surface: #0d1422;
+            --surface-light: #111b2d;
+            --border: #1e293b;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-dark: #0ea5e9;
+            --white: #ffffff;
         }
 
-        /* NAVBAR */
+        body {
+            font-family:
+                Inter,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           BACKGROUND EFFECT
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: rgba(14, 165, 233, 0.08);
+            border-radius: 50%;
+            filter: blur(120px);
+            top: -200px;
+            right: -150px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            background: rgba(56, 189, 248, 0.05);
+            border-radius: 50%;
+            filter: blur(120px);
+            bottom: -200px;
+            left: -150px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(11, 17, 32, 0.95);
-            border-bottom: 1px solid #1e293b;
-            backdrop-filter: blur(10px);
+
+            background: rgba(7, 11, 20, 0.88);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(148, 163, 184, 0.10);
         }
 
         .navbar {
-            max-width: 1150px;
+            max-width: 1180px;
             margin: auto;
-            padding: 18px 25px;
+
+            padding: 18px 28px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-size: 23px;
-            font-weight: bold;
-            color: #38bdf8;
+        .brand {
+            font-size: 21px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
-        .logo span {
-            color: white;
+        .brand .bracket {
+            color: var(--accent);
+        }
+
+        .brand-name {
+            color: var(--white);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
         }
 
         nav a {
-            color: #cbd5e1;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
-            transition: 0.3s;
+            color: var(--muted);
+            font-size: 14px;
+            transition: 0.25s ease;
         }
 
         nav a:hover {
-            color: #38bdf8;
+            color: var(--accent);
         }
 
-        /* HERO */
+        .nav-contact {
+            border: 1px solid var(--border);
+            padding: 9px 16px;
+            border-radius: 6px;
+            color: var(--white) !important;
+        }
+
+        .nav-contact:hover {
+            border-color: var(--accent);
+            color: var(--accent) !important;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            min-height: 90vh;
+            max-width: 1180px;
+            min-height: 88vh;
+
+            margin: auto;
+            padding: 100px 28px;
+
             display: flex;
             align-items: center;
-            max-width: 1150px;
-            margin: auto;
-            padding: 80px 25px;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
         }
 
-        .small-text {
-            color: #38bdf8;
-            font-size: 16px;
-            margin-bottom: 15px;
-            font-weight: bold;
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 7px 13px;
+
+            border: 1px solid var(--border);
+            border-radius: 50px;
+
+            color: var(--muted);
+            font-size: 13px;
+
+            margin-bottom: 25px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+
+            background: #22c55e;
+            border-radius: 50%;
+
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
         }
 
         .hero h1 {
-            font-size: clamp(45px, 7vw, 75px);
-            line-height: 1.1;
+            font-size: clamp(48px, 8vw, 88px);
+            line-height: 1.02;
+            letter-spacing: -4px;
+
             margin-bottom: 20px;
-            color: white;
         }
 
         .hero h1 span {
-            color: #38bdf8;
+            color: var(--accent);
         }
 
-        .hero h2 {
-            font-size: 28px;
-            color: #94a3b8;
-            margin-bottom: 20px;
+        .hero-role {
+            font-size: clamp(22px, 3vw, 32px);
+            color: #cbd5e1;
+            font-weight: 500;
+
+            margin-bottom: 24px;
         }
 
-        .hero p {
-            max-width: 700px;
-            color: #94a3b8;
+        .hero-description {
+            max-width: 720px;
+
+            color: var(--muted);
             font-size: 17px;
-            margin-bottom: 30px;
+
+            margin-bottom: 35px;
         }
 
-        .buttons {
+        .hero-buttons {
             display: flex;
-            gap: 15px;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 12px 21px;
+
             border-radius: 7px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.25s ease;
         }
 
-        .primary {
-            background: #38bdf8;
-            color: #07111f;
+        .button-primary {
+            background: var(--accent);
+            color: #06111c;
         }
 
-        .primary:hover {
+        .button-primary:hover {
             background: #7dd3fc;
             transform: translateY(-2px);
         }
 
-        .secondary {
-            border: 1px solid #334155;
-            color: white;
+        .button-outline {
+            border: 1px solid var(--border);
+            color: var(--white);
         }
 
-        .secondary:hover {
-            border-color: #38bdf8;
-            color: #38bdf8;
+        .button-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
         }
 
-        /* GENERAL */
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
 
-        section {
-            max-width: 1150px;
+        .section {
+            max-width: 1180px;
             margin: auto;
-            padding: 90px 25px;
+            padding: 100px 28px;
+        }
+
+        .section-label {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
         }
 
         .section-title {
+            font-size: 40px;
+            letter-spacing: -1.5px;
+
             margin-bottom: 45px;
         }
 
-        .section-title small {
-            color: #38bdf8;
-            font-weight: bold;
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 70px;
         }
 
-        .section-title h2 {
-            font-size: 36px;
-            color: white;
-            margin-top: 5px;
-        }
-
-        /* ABOUT */
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about-grid {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
-            gap: 50px;
+            gap: 70px;
         }
 
         .about-text p {
-            color: #94a3b8;
-            margin-bottom: 18px;
-        }
-
-        .info-box {
-            border: 1px solid #1e293b;
-            background: #111827;
-            padding: 25px;
-            border-radius: 12px;
-        }
-
-        .info-box div {
-            margin-bottom: 18px;
-        }
-
-        .info-box strong {
-            display: block;
-            color: white;
-        }
-
-        .info-box span {
-            color: #94a3b8;
-        }
-
-        /* SKILLS */
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            gap: 15px;
-        }
-
-        .skill {
-            background: #111827;
-            border: 1px solid #1e293b;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .skill:hover {
-            transform: translateY(-5px);
-            border-color: #38bdf8;
-        }
-
-        .skill h3 {
-            color: white;
-            font-size: 17px;
-        }
-
-        .skill p {
-            color: #64748b;
-            font-size: 13px;
-            margin-top: 5px;
-        }
-
-        /* PROJECTS */
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .project {
-            background: #111827;
-            border: 1px solid #1e293b;
-            padding: 28px;
-            border-radius: 12px;
-            transition: 0.3s;
-        }
-
-        .project:hover {
-            transform: translateY(-6px);
-            border-color: #38bdf8;
-        }
-
-        .project-number {
-            color: #38bdf8;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .project h3 {
-            color: white;
-            margin: 10px 0;
-            font-size: 22px;
-        }
-
-        .project p {
-            color: #94a3b8;
-            font-size: 15px;
+            color: var(--muted);
+            font-size: 16px;
             margin-bottom: 20px;
         }
 
-        .tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+        .about-highlight {
+            border-left: 2px solid var(--accent);
+            padding-left: 20px;
+
+            color: #cbd5e1;
+            font-size: 17px;
         }
 
-        .tech span {
-            background: #1e293b;
-            color: #7dd3fc;
-            padding: 5px 10px;
-            border-radius: 5px;
+        .details {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            padding: 28px;
+        }
+
+        .detail {
+            padding: 17px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .detail:first-child {
+            padding-top: 0;
+        }
+
+        .detail:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .detail-title {
+            display: block;
+
+            color: #64748b;
             font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            margin-bottom: 4px;
+        }
+
+        .detail-value {
+            color: var(--white);
+            font-size: 14px;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .skill-card {
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            padding: 25px;
+
+            transition: 0.25s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.5);
+            background: var(--surface-light);
+        }
+
+        .skill-number {
+            color: #475569;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            position: relative;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            padding: 30px;
+
+            transition: 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(56, 189, 248, 0.5);
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 28px;
+        }
+
+        .project-number {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .project-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--border);
+            border-radius: 8px;
+
+            color: var(--accent);
+            font-size: 16px;
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            font-size: 14px;
+
+            min-height: 100px;
+        }
+
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+
+            margin-top: 22px;
+        }
+
+        .technologies span {
+            background: #172033;
+
+            border: 1px solid #243247;
+
+            color: #bae6fd;
+
+            padding: 5px 9px;
+
+            border-radius: 5px;
+
+            font-size: 11px;
         }
 
         .project-link {
             display: inline-block;
-            margin-top: 20px;
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: bold;
+
+            margin-top: 25px;
+
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
         }
 
-        /* EDUCATION */
-
-        .education {
-            border-left: 2px solid #38bdf8;
-            padding-left: 25px;
+        .project-link:hover {
+            text-decoration: underline;
         }
 
-        .education-item {
-            margin-bottom: 35px;
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+
+            border-left: 1px solid var(--border);
+
+            padding-left: 35px;
         }
 
-        .education-item h3 {
-            color: white;
-            font-size: 20px;
+        .timeline-item {
+            position: relative;
+            margin-bottom: 45px;
         }
 
-        .education-item p {
-            color: #94a3b8;
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            width: 9px;
+            height: 9px;
+
+            background: var(--accent);
+            border-radius: 50%;
+
+            left: -40px;
+            top: 6px;
+
+            box-shadow: 0 0 0 5px var(--background);
         }
 
-        /* CONTACT */
+        .timeline-date {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
 
-        .contact-box {
-            background: #111827;
-            border: 1px solid #1e293b;
-            border-radius: 15px;
-            text-align: center;
-            padding: 55px 25px;
+            letter-spacing: 1px;
+
+            margin-bottom: 7px;
         }
 
-        .contact-box h2 {
-            font-size: 35px;
-            color: white;
-            margin-bottom: 15px;
+        .timeline-item h3 {
+            font-size: 21px;
+            margin-bottom: 5px;
         }
 
-        .contact-box p {
-            color: #94a3b8;
-            max-width: 600px;
-            margin: auto auto 25px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
-            color: #38bdf8;
-            text-decoration: none;
-            border: 1px solid #334155;
-            padding: 10px 18px;
-            border-radius: 7px;
-        }
-
-        .social-links a:hover {
-            border-color: #38bdf8;
-        }
-
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid #1e293b;
-            text-align: center;
-            padding: 25px;
-            color: #64748b;
+        .timeline-item p {
+            color: var(--muted);
             font-size: 14px;
         }
 
-        /* MOBILE */
+        /* =========================
+           GITHUB CTA
+        ========================= */
 
-        @media(max-width: 750px) {
+        .github-box {
+            background: linear-gradient(
+                135deg,
+                #0d1422,
+                #101c30
+            );
 
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+
+            padding: 55px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 30px;
+        }
+
+        .github-box h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .github-box p {
+            color: var(--muted);
+            max-width: 600px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: clamp(38px, 6vw, 60px);
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .contact > p {
+            color: var(--muted);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 30px;
+        }
+
+        .contact-link {
+            border: 1px solid var(--border);
+            border-radius: 7px;
+
+            padding: 11px 18px;
+
+            color: #cbd5e1;
+            font-size: 14px;
+
+            transition: 0.25s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+
+            max-width: 1180px;
+            margin: auto;
+
+            padding: 25px 28px;
+
+            display: flex;
+            justify-content: space-between;
+
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            nav a {
-                margin: 0 7px;
-                font-size: 13px;
-            }
-
-            .hero {
-                min-height: 80vh;
+            .projects {
+                grid-template-columns: 1fr;
             }
 
             .about-grid {
                 grid-template-columns: 1fr;
             }
 
-            .hero h2 {
-                font-size: 22px;
-            }
-
-            section {
-                padding: 65px 20px;
+            .github-box {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                padding: 16px 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                min-height: 80vh;
+                padding: 80px 20px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .section {
+                padding: 75px 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .github-box {
+                padding: 35px 25px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <header>
+
     <div class="navbar">
 
-        <div class="logo">
-            <span>&lt;</span> Sanobar <span>/&gt;</span>
-        </div>
+        <a href="#home" class="brand">
+            <span class="bracket">&lt;</span>
+            <span class="brand-name">SANOBAR</span>
+            <span class="bracket">/&gt;</span>
+        </a>
 
         <nav>
-            <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact" class="nav-contact">Contact</a>
         </nav>
 
     </div>
+
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
+
+<main>
 
 <section class="hero" id="home">
 
     <div class="hero-content">
 
-        <div class="small-text">
-            Hello, I'm
+        <div class="availability">
+            <span class="status-dot"></span>
+            Engineering Student · Technology Enthusiast
         </div>
 
         <h1>
             Syeda <span>Sanobar.</span>
         </h1>
 
-        <h2>
+        <div class="hero-role">
             Software Engineer & Web Developer
-        </h2>
+        </div>
 
-        <p>
-            I am an engineering student passionate about software development,
-            web technologies, databases and data science. I enjoy building
-            practical applications and continuously learning new technologies.
+        <p class="hero-description">
+            I build practical software solutions using programming,
+            web technologies, databases and data-driven approaches.
+            Currently developing my skills through hands-on projects
+            and continuous learning.
         </p>
 
-        <div class="buttons">
+        <div class="hero-buttons">
 
-            <a href="#projects" class="btn primary">
-                View Projects
+            <a href="#projects"
+               class="button button-primary">
+                View My Work →
             </a>
 
             <a href="https://github.com/syedasanobar789-art"
                target="_blank"
-               class="btn secondary">
+               class="button button-outline">
                 GitHub ↗
             </a>
 
@@ -465,58 +817,104 @@
 </section>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
 
-<section id="about">
+<section class="section" id="about">
 
-    <div class="section-title">
-        <small>01 — ABOUT ME</small>
-        <h2>About Me</h2>
+    <div class="section-label">
+        01 — About
     </div>
+
+    <h2 class="section-title">
+        Building with curiosity<br>
+        and code.
+    </h2>
+
+    <div class="divider"></div>
 
     <div class="about-grid">
 
         <div class="about-text">
 
             <p>
-                I am currently pursuing engineering with a strong interest
-                in software engineering and web development.
+                I am an engineering student with a growing focus on
+                software engineering, web development and data
+                technologies.
             </p>
 
             <p>
-                I enjoy working with programming languages, databases and
-                modern web technologies to create useful and practical
-                solutions.
+                My approach to learning is practical: I enjoy taking
+                concepts from programming, databases and development
+                and turning them into working applications.
             </p>
 
             <p>
-                I am continuously improving my technical skills through
-                academic projects, hands-on development and learning
-                new technologies.
+                I am continuously expanding my technical knowledge
+                through academic work, development projects and
+                hands-on technology learning.
             </p>
+
+            <div class="about-highlight">
+                Interested in creating useful, reliable and
+                user-focused software solutions.
+            </div>
 
         </div>
 
-        <div class="info-box">
 
-            <div>
-                <strong>Role</strong>
-                <span>Software Engineer & Web Developer</span>
+        <div class="details">
+
+            <div class="detail">
+
+                <span class="detail-title">
+                    Focus
+                </span>
+
+                <span class="detail-value">
+                    Software Engineering
+                </span>
+
             </div>
 
-            <div>
-                <strong>Education</strong>
-                <span>Engineering Student</span>
+
+            <div class="detail">
+
+                <span class="detail-title">
+                    Development
+                </span>
+
+                <span class="detail-value">
+                    Web Applications
+                </span>
+
             </div>
 
-            <div>
-                <strong>Interests</strong>
-                <span>Software Development, Web Development, Data Science</span>
+
+            <div class="detail">
+
+                <span class="detail-title">
+                    Databases
+                </span>
+
+                <span class="detail-value">
+                    MySQL · MongoDB
+                </span>
+
             </div>
 
-            <div>
-                <strong>Location</strong>
-                <span>Karnataka, India</span>
+
+            <div class="detail">
+
+                <span class="detail-title">
+                    Location
+                </span>
+
+                <span class="detail-value">
+                    Karnataka, India
+                </span>
+
             </div>
 
         </div>
@@ -526,55 +924,78 @@
 </section>
 
 
-<!-- SKILLS -->
+<!-- =========================
+     SKILLS
+========================= -->
 
-<section id="skills">
+<section class="section" id="skills">
 
-    <div class="section-title">
-        <small>02 — SKILLS</small>
-        <h2>Technical Skills</h2>
+    <div class="section-label">
+        02 — Skills
     </div>
 
-    <div class="skills">
+    <h2 class="section-title">
+        Technical toolkit.
+    </h2>
 
-        <div class="skill">
+    <div class="divider"></div>
+
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <div class="skill-number">01</div>
             <h3>Java</h3>
-            <p>Programming</p>
+            <p>Object-oriented programming</p>
         </div>
 
-        <div class="skill">
+
+        <div class="skill-card">
+            <div class="skill-number">02</div>
             <h3>Python</h3>
-            <p>Programming</p>
+            <p>Programming & applications</p>
         </div>
 
-        <div class="skill">
+
+        <div class="skill-card">
+            <div class="skill-number">03</div>
             <h3>HTML & CSS</h3>
-            <p>Web Development</p>
+            <p>Web interface development</p>
         </div>
 
-        <div class="skill">
+
+        <div class="skill-card">
+            <div class="skill-number">04</div>
             <h3>JavaScript</h3>
-            <p>Web Development</p>
+            <p>Interactive web experiences</p>
         </div>
 
-        <div class="skill">
+
+        <div class="skill-card">
+            <div class="skill-number">05</div>
             <h3>MySQL</h3>
-            <p>Database</p>
+            <p>Relational databases</p>
         </div>
 
-        <div class="skill">
+
+        <div class="skill-card">
+            <div class="skill-number">06</div>
             <h3>MongoDB</h3>
-            <p>NoSQL Database</p>
+            <p>NoSQL databases</p>
         </div>
 
-        <div class="skill">
-            <h3>DBMS</h3>
-            <p>Database Management</p>
+
+        <div class="skill-card">
+            <div class="skill-number">07</div>
+            <h3>Flask</h3>
+            <p>Python web development</p>
         </div>
 
-        <div class="skill">
+
+        <div class="skill-card">
+            <div class="skill-number">08</div>
             <h3>Data Science</h3>
-            <p>Data & Analytics</p>
+            <p>Data & analytical concepts</p>
         </div>
 
     </div>
@@ -582,30 +1003,51 @@
 </section>
 
 
-<!-- PROJECTS -->
+<!-- =========================
+     PROJECTS
+========================= -->
 
-<section id="projects">
+<section class="section" id="projects">
 
-    <div class="section-title">
-        <small>03 — PROJECTS</small>
-        <h2>Featured Projects</h2>
+    <div class="section-label">
+        03 — Selected Work
     </div>
+
+    <h2 class="section-title">
+        Projects I've built.
+    </h2>
+
+    <div class="divider"></div>
+
 
     <div class="projects">
 
-        <div class="project">
 
-            <div class="project-number">PROJECT 01</div>
+        <!-- PROJECT 1 -->
+
+        <article class="project-card">
+
+            <div class="project-top">
+
+                <span class="project-number">
+                    PROJECT 01
+                </span>
+
+                <div class="project-icon">
+                    01
+                </div>
+
+            </div>
 
             <h3>KisanLink</h3>
 
             <p>
-                A farmer-to-buyer platform designed to strengthen market
-                linkages and provide useful agricultural market price
-                information.
+                A web platform designed to connect farmers and buyers
+                while providing market-price information to support
+                better market linkages and price discovery.
             </p>
 
-            <div class="tech">
+            <div class="technologies">
                 <span>Python</span>
                 <span>Flask</span>
                 <span>MySQL</span>
@@ -616,25 +1058,37 @@
             <a href="https://github.com/syedasanobar789-art"
                target="_blank"
                class="project-link">
-                View on GitHub →
+                View Project →
             </a>
 
-        </div>
+        </article>
 
 
-        <div class="project">
+        <!-- PROJECT 2 -->
 
-            <div class="project-number">PROJECT 02</div>
+        <article class="project-card">
+
+            <div class="project-top">
+
+                <span class="project-number">
+                    PROJECT 02
+                </span>
+
+                <div class="project-icon">
+                    02
+                </div>
+
+            </div>
 
             <h3>Lost & Found Portal</h3>
 
             <p>
-                A college management system that helps users report,
-                manage and find lost items through a database-driven
-                web application.
+                A college management web application for reporting
+                and managing lost-and-found items using a database
+                backed system.
             </p>
 
-            <div class="tech">
+            <div class="technologies">
                 <span>Python</span>
                 <span>Flask</span>
                 <span>MySQL</span>
@@ -644,73 +1098,119 @@
             <a href="https://github.com/syedasanobar789-art"
                target="_blank"
                class="project-link">
-                View on GitHub →
+                View Project →
             </a>
 
-        </div>
+        </article>
 
 
-        <div class="project">
+        <!-- PROJECT 3 -->
 
-            <div class="project-number">PROJECT 03</div>
+        <article class="project-card">
 
-            <h3>Social Media Management System</h3>
+            <div class="project-top">
+
+                <span class="project-number">
+                    PROJECT 03
+                </span>
+
+                <div class="project-icon">
+                    03
+                </div>
+
+            </div>
+
+            <h3>Social Media Management</h3>
 
             <p>
-                A MongoDB-based application demonstrating users, posts,
-                comments, likes, following and messaging functionality.
+                A MongoDB-based academic project demonstrating
+                users, posts, comments, likes, following and
+                messaging concepts.
             </p>
 
-            <div class="tech">
+            <div class="technologies">
                 <span>MongoDB</span>
-                <span>Database</span>
+                <span>NoSQL</span>
                 <span>CRUD</span>
+                <span>Database</span>
             </div>
 
             <a href="https://github.com/syedasanobar789-art"
                target="_blank"
                class="project-link">
-                View on GitHub →
+                View Project →
             </a>
 
-        </div>
+        </article>
 
     </div>
 
 </section>
 
 
-<!-- EDUCATION -->
+<!-- =========================
+     EDUCATION
+========================= -->
 
-<section id="education">
+<section class="section" id="education">
 
-    <div class="section-title">
-        <small>04 — EDUCATION</small>
-        <h2>Education</h2>
+    <div class="section-label">
+        04 — Education
     </div>
 
-    <div class="education">
+    <h2 class="section-title">
+        Academic journey.
+    </h2>
 
-        <div class="education-item">
+    <div class="divider"></div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">
+                CURRENT
+            </div>
 
             <h3>Engineering</h3>
 
             <p>
-                Pursuing Engineering
-            </p>
-
-            <p>
-                Visvesvaraya Technological University (VTU)
+                Pursuing Engineering at
+                Adichunchanagiri Institute of Technology,
+                affiliated with Visvesvaraya Technological University.
             </p>
 
         </div>
 
-        <div class="education-item">
 
-            <h3>Technical Learning</h3>
+        <div class="timeline-item">
+
+            <div class="timeline-date">
+                TECHNICAL LEARNING
+            </div>
+
+            <h3>Software Development</h3>
 
             <p>
-                Java • Python • Web Development • DBMS • MongoDB • Data Science
+                Developing practical knowledge in Java, Python,
+                web development, databases and data science.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">
+                CONTINUOUS LEARNING
+            </div>
+
+            <h3>Hands-on Projects</h3>
+
+            <p>
+                Building academic and practical projects to
+                strengthen programming and software development skills.
             </p>
 
         </div>
@@ -720,48 +1220,105 @@
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     GITHUB
+========================= -->
 
-<section id="contact">
+<section class="section">
 
-    <div class="contact-box">
+    <div class="github-box">
 
-        <h2>Let's Connect</h2>
+        <div>
 
-        <p>
-            I'm always interested in learning, collaborating on projects
-            and connecting with people in the technology community.
-        </p>
-
-        <div class="social-links">
-
-            <a href="https://github.com/syedasanobar789-art"
-               target="_blank">
+            <div class="section-label">
                 GitHub
-            </a>
+            </div>
 
-            <a href="#" target="_blank">
-                LinkedIn
-            </a>
+            <h2>Explore my code.</h2>
 
-            <a href="mailto:your-email@example.com">
-                Email
-            </a>
+            <p>
+                View my repositories, projects and development work
+                on GitHub.
+            </p>
 
         </div>
+
+        <a href="https://github.com/syedasanobar789-art"
+           target="_blank"
+           class="button button-primary">
+            Visit GitHub ↗
+        </a>
 
     </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="section contact" id="contact">
+
+    <div class="section-label">
+        05 — Contact
+    </div>
+
+    <h2>
+        Let's connect.
+    </h2>
+
+    <p>
+        Interested in technology, learning and building practical
+        software solutions. Feel free to connect with me.
+    </p>
+
+
+    <div class="contact-links">
+
+        <a href="https://github.com/syedasanobar789-art"
+           target="_blank"
+           class="contact-link">
+            GitHub ↗
+        </a>
+
+        <!-- Replace # with your LinkedIn URL -->
+
+        <a href="#"
+           class="contact-link">
+            LinkedIn ↗
+        </a>
+
+        <!-- Replace the email below with your email -->
+
+        <a href="mailto:your-email@example.com"
+           class="contact-link">
+            Email ↗
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-    © 2026 Syeda Sanobar • Software Engineer & Web Developer
+    <span>
+        © 2026 Syeda Sanobar
+    </span>
+
+    <span>
+        Software Engineer · Web Developer
+    </span>
 
 </footer>
+
 
 </body>
 </html>
