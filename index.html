@@ -4,52 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Syeda Sanobar | Software Engineer</title>
+    <title>Syeda Sanobar | Software Engineer & Web Developer</title>
 
     <meta name="description"
-          content="Syeda Sanobar — Software Engineer and Web Developer portfolio.">
+          content="Portfolio of Syeda Sanobar - Software Engineer, Web Developer and Data Science Engineering student.">
 
     <style>
 
-        /* =========================================
-           GLOBAL
-        ========================================= */
+        /* =========================
+           COLOR PALETTE
+        ========================= */
+
+        :root {
+            --ivory: #F7F4EE;
+            --charcoal: #171717;
+            --terracotta: #C65D45;
+            --beige: #DED6C8;
+            --soft-white: #FCFAF6;
+            --muted: #6D6861;
+        }
+
+        /* =========================
+           RESET
+        ========================= */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
-        :root {
-            --cream: #f7f4ee;
-            --cream-dark: #eee9df;
-            --white: #ffffff;
-
-            --charcoal: #171717;
-            --dark-gray: #343434;
-            --gray: #6f6b65;
-            --light-gray: #a7a29a;
-
-            --accent: #c65d45;
-            --accent-dark: #9f402f;
-
-            --border: #ded9cf;
-        }
-
         body {
-            font-family:
-                "Segoe UI",
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            background: var(--cream);
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--ivory);
             color: var(--charcoal);
-
-            line-height: 1.7;
-            overflow-x: hidden;
+            line-height: 1.6;
         }
 
         a {
@@ -57,1423 +50,976 @@
             color: inherit;
         }
 
-
-        /* =========================================
+        /* =========================
            NAVIGATION
-        ========================================= */
+        ========================= */
 
-        header {
+        nav {
             position: sticky;
             top: 0;
             z-index: 1000;
 
-            background: rgba(247, 244, 238, 0.94);
-            backdrop-filter: blur(14px);
+            background: rgba(247, 244, 238, 0.95);
+            backdrop-filter: blur(10px);
 
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--beige);
         }
 
-        .navbar {
-            max-width: 1200px;
+        .nav-container {
+            max-width: 1150px;
             margin: auto;
 
-            padding: 20px 35px;
+            padding: 20px 25px;
 
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
-            font-size: 21px;
+            font-size: 24px;
             font-weight: 800;
-            letter-spacing: 1px;
+            letter-spacing: -1px;
         }
 
         .logo span {
-            color: var(--accent);
+            color: var(--terracotta);
         }
 
-        nav {
+        .nav-links {
             display: flex;
-            align-items: center;
-            gap: 30px;
+            gap: 28px;
+            list-style: none;
         }
 
-        nav a {
+        .nav-links a {
             font-size: 14px;
-            color: var(--gray);
-
-            transition: 0.25s ease;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
-        nav a:hover {
-            color: var(--accent);
+        .nav-links a:hover {
+            color: var(--terracotta);
         }
 
-        .nav-button {
-            border: 1px solid var(--charcoal);
-            padding: 9px 16px;
-            border-radius: 4px;
-
-            color: var(--charcoal);
-        }
-
-        .nav-button:hover {
-            background: var(--charcoal);
-            color: white;
-        }
-
-
-        /* =========================================
+        /* =========================
            HERO
-        ========================================= */
+        ========================= */
 
         .hero {
-            max-width: 1200px;
-            min-height: 88vh;
+            min-height: 90vh;
 
+            max-width: 1150px;
             margin: auto;
-
-            padding: 100px 35px;
+            padding: 100px 25px;
 
             display: flex;
             align-items: center;
         }
 
         .hero-content {
-            max-width: 950px;
+            max-width: 850px;
         }
 
-        .intro {
-            color: var(--accent);
-
-            font-size: 13px;
-            font-weight: 700;
-
+        .small-title {
+            color: var(--terracotta);
+            font-size: 14px;
+            font-weight: bold;
             letter-spacing: 3px;
             text-transform: uppercase;
 
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: clamp(55px, 9vw, 110px);
-
+            font-size: clamp(48px, 8vw, 92px);
             line-height: 0.95;
-
             letter-spacing: -5px;
 
-            font-weight: 800;
-
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .hero h1 span {
-            color: var(--accent);
+            color: var(--terracotta);
         }
 
-        .hero-role {
-            font-size: clamp(23px, 3vw, 34px);
-
-            color: var(--dark-gray);
+        .hero h2 {
+            font-size: clamp(22px, 4vw, 38px);
+            font-weight: 500;
 
             margin-bottom: 25px;
-
-            font-weight: 500;
         }
 
-        .hero-description {
-            max-width: 720px;
+        .hero p {
+            max-width: 700px;
 
-            color: var(--gray);
-
-            font-size: 17px;
+            color: var(--muted);
+            font-size: 18px;
 
             margin-bottom: 35px;
         }
 
-        .hero-buttons {
+        .buttons {
             display: flex;
-            gap: 13px;
             flex-wrap: wrap;
+            gap: 15px;
         }
 
-        .button {
+        .btn {
             display: inline-block;
 
-            padding: 13px 22px;
+            padding: 14px 24px;
 
+            border: 1px solid var(--terracotta);
             border-radius: 4px;
 
-            font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
 
-            transition: 0.25s ease;
+            transition: 0.3s;
         }
 
-        .primary-button {
-            background: var(--charcoal);
+        .btn-primary {
+            background: var(--terracotta);
             color: white;
         }
 
-        .primary-button:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
+        .btn-primary:hover {
+            background: var(--charcoal);
+            border-color: var(--charcoal);
         }
 
-        .outline-button {
-            border: 1px solid var(--charcoal);
+        .btn-outline {
             color: var(--charcoal);
         }
 
-        .outline-button:hover {
+        .btn-outline:hover {
             background: var(--charcoal);
             color: white;
-            transform: translateY(-3px);
         }
 
+        /* =========================
+           GENERAL SECTION
+        ========================= */
 
-        /* =========================================
-           DECORATIVE LINE
-        ========================================= */
-
-        .hero-line {
-            width: 100%;
-            height: 1px;
-
-            background: var(--border);
-
-            margin-top: 60px;
-        }
-
-
-        /* =========================================
-           SECTIONS
-        ========================================= */
-
-        .section {
-            max-width: 1200px;
-
+        section {
+            max-width: 1150px;
             margin: auto;
+            padding: 100px 25px;
+        }
 
-            padding: 110px 35px;
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+
+            margin-bottom: 50px;
+
+            border-bottom: 1px solid var(--beige);
+            padding-bottom: 20px;
         }
 
         .section-number {
-            color: var(--accent);
+            color: var(--terracotta);
+            font-size: 14px;
+            font-weight: bold;
+        }
 
-            font-size: 12px;
-            font-weight: 700;
+        .section-title {
+            font-size: clamp(35px, 5vw, 55px);
+            letter-spacing: -2px;
+        }
 
-            letter-spacing: 2px;
+        /* =========================
+           ABOUT
+        ========================= */
 
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 70px;
+        }
+
+        .about-label {
+            font-size: 14px;
+            color: var(--terracotta);
+            font-weight: bold;
             text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .about-text {
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        .about-text strong {
+            color: var(--terracotta);
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .skill {
+            background: var(--soft-white);
+
+            border: 1px solid var(--beige);
+
+            padding: 25px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+
+            border-color: var(--terracotta);
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+        }
+
+        .skill-number {
+            display: block;
+
+            color: var(--terracotta);
+
+            font-size: 13px;
 
             margin-bottom: 12px;
         }
 
-        .section-title {
-            font-size: 48px;
+        /* =========================
+           PROJECTS
+        ========================= */
 
-            line-height: 1.1;
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
 
-            letter-spacing: -2px;
+        .project {
+            background: var(--soft-white);
+
+            border: 1px solid var(--beige);
+
+            padding: 30px;
+
+            min-height: 330px;
+
+            display: flex;
+            flex-direction: column;
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+
+            border-color: var(--terracotta);
+
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+        }
+
+        .project-number {
+            color: var(--terracotta);
+
+            font-weight: bold;
+
+            margin-bottom: 50px;
+        }
+
+        .project h3 {
+            font-size: 25px;
+
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            color: var(--muted);
 
             margin-bottom: 25px;
         }
 
-        .section-intro {
-            max-width: 650px;
+        .project-link {
+            margin-top: auto;
 
-            color: var(--gray);
+            color: var(--terracotta);
 
-            font-size: 16px;
-
-            margin-bottom: 55px;
+            font-weight: bold;
         }
 
-
-        /* =========================================
-           ABOUT
-        ========================================= */
-
-        .about {
-            display: grid;
-
-            grid-template-columns: 1.5fr 1fr;
-
-            gap: 80px;
+        .project-link:hover {
+            color: var(--charcoal);
         }
 
-        .about-text p {
-            color: var(--gray);
+        /* =========================
+           EDUCATION
+        ========================= */
 
-            font-size: 16px;
+        .education {
+            background: var(--charcoal);
+            color: white;
 
-            margin-bottom: 22px;
+            max-width: 1150px;
+
+            margin: 0 auto;
+
+            padding: 60px;
         }
 
-        .quote {
-            border-left: 3px solid var(--accent);
-
-            padding-left: 20px;
-
-            color: var(--dark-gray);
-
-            font-size: 18px;
-
-            margin-top: 30px;
-        }
-
-        .profile-info {
-            border-top: 1px solid var(--border);
-        }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-
-            padding: 18px 0;
-
-            border-bottom: 1px solid var(--border);
-
-            gap: 20px;
-        }
-
-        .info-label {
-            color: var(--light-gray);
-
-            font-size: 12px;
-
-            text-transform: uppercase;
-
-            letter-spacing: 1px;
-        }
-
-        .info-value {
-            text-align: right;
+        .education-label {
+            color: #E58A72;
 
             font-size: 14px;
 
-            font-weight: 600;
-        }
+            text-transform: uppercase;
 
+            letter-spacing: 2px;
 
-        /* =========================================
-           SKILLS
-        ========================================= */
-
-        .skills-grid {
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            border-top: 1px solid var(--border);
-            border-left: 1px solid var(--border);
-        }
-
-        .skill {
-            padding: 30px;
-
-            border-right: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-
-            background: transparent;
-
-            transition: 0.3s ease;
-        }
-
-        .skill:hover {
-            background: var(--white);
-        }
-
-        .skill-number {
-            color: var(--accent);
-
-            font-size: 12px;
+            font-weight: bold;
 
             margin-bottom: 20px;
         }
 
-        .skill h3 {
-            font-size: 18px;
-
-            margin-bottom: 5px;
-        }
-
-        .skill p {
-            color: var(--gray);
-
-            font-size: 13px;
-        }
-
-
-        /* =========================================
-           PROJECTS
-        ========================================= */
-
-        .project {
-            display: grid;
-
-            grid-template-columns: 100px 1fr 1.3fr;
-
-            gap: 35px;
-
-            padding: 35px 0;
-
-            border-top: 1px solid var(--border);
-
-            transition: 0.3s ease;
-        }
-
-        .project:last-child {
-            border-bottom: 1px solid var(--border);
-        }
-
-        .project:hover {
-            padding-left: 15px;
-            padding-right: 15px;
-
-            background: var(--white);
-        }
-
-        .project-number {
-            color: var(--accent);
-
-            font-size: 13px;
-            font-weight: 700;
-
-            letter-spacing: 1px;
-        }
-
-        .project-title {
-            font-size: 25px;
-
-            font-weight: 700;
-        }
-
-        .project-description {
-            color: var(--gray);
-
-            font-size: 14px;
-
-            margin-bottom: 17px;
-        }
-
-        .technologies {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 7px;
-        }
-
-        .technologies span {
-            background: var(--cream-dark);
-
-            color: var(--dark-gray);
-
-            padding: 5px 9px;
-
-            font-size: 11px;
-
-            border-radius: 3px;
-        }
-
-        .project-link {
-            display: inline-block;
-
-            margin-top: 17px;
-
-            color: var(--accent);
-
-            font-size: 13px;
-
-            font-weight: 700;
-        }
-
-        .project-link:hover {
-            color: var(--accent-dark);
-        }
-
-
-        /* =========================================
-           EDUCATION
-        ========================================= */
-
-        .education {
-            display: grid;
-
-            grid-template-columns: 1fr 2fr;
-
-            gap: 60px;
-
-            border-top: 1px solid var(--border);
-
-            padding-top: 35px;
-        }
-
-        .education-year {
-            color: var(--accent);
-
-            font-size: 13px;
-
-            font-weight: 700;
-
-            letter-spacing: 1px;
-        }
-
         .education h3 {
-            font-size: 24px;
+            font-size: 32px;
 
-            margin-bottom: 8px;
+            margin-bottom: 15px;
         }
 
         .education p {
-            color: var(--gray);
+            color: #D0CCC5;
 
-            font-size: 15px;
+            font-size: 17px;
+
+            max-width: 750px;
         }
 
-
-        /* =========================================
-           GITHUB SECTION
-        ========================================= */
+        /* =========================
+           GITHUB
+        ========================= */
 
         .github-section {
-            background: var(--charcoal);
+            text-align: center;
 
-            color: white;
+            padding: 110px 25px;
+        }
 
-            max-width: 1200px;
+        .github-section h2 {
+            font-size: clamp(35px, 6vw, 65px);
 
-            margin: 50px auto;
+            letter-spacing: -3px;
 
-            padding: 65px 55px;
+            margin-bottom: 20px;
+        }
 
-            border-radius: 6px;
+        .github-section p {
+            color: var(--muted);
 
-            display: flex;
+            max-width: 600px;
 
-            align-items: center;
+            margin: 0 auto 30px;
+        }
 
-            justify-content: space-between;
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
 
             gap: 30px;
         }
 
-        .github-section .section-number {
-            color: #e47a62;
+        .contact-card {
+            background: var(--soft-white);
+
+            border: 1px solid var(--beige);
+
+            padding: 30px;
         }
 
-        .github-section h2 {
-            font-size: 34px;
+        .contact-card span {
+            display: block;
 
-            margin-bottom: 8px;
-        }
-
-        .github-section p {
-            color: #aaa;
-
-            max-width: 600px;
-        }
-
-        .github-button {
-            background: white;
-
-            color: var(--charcoal);
-
-            white-space: nowrap;
-        }
-
-        .github-button:hover {
-            background: var(--accent);
-
-            color: white;
-        }
-
-
-        /* =========================================
-           CONTACT
-        ========================================= */
-
-        .contact {
-            text-align: center;
-
-            padding-top: 120px;
-            padding-bottom: 120px;
-        }
-
-        .contact .section-number {
-            margin-bottom: 18px;
-        }
-
-        .contact h2 {
-            font-size: clamp(45px, 7vw, 80px);
-
-            letter-spacing: -4px;
-
-            margin-bottom: 20px;
-        }
-
-        .contact h2 span {
-            color: var(--accent);
-        }
-
-        .contact p {
-            color: var(--gray);
-
-            max-width: 600px;
-
-            margin: auto;
-        }
-
-        .contact-links {
-            display: flex;
-
-            justify-content: center;
-
-            gap: 12px;
-
-            flex-wrap: wrap;
-
-            margin-top: 35px;
-        }
-
-        .contact-link {
-            border: 1px solid var(--border);
-
-            padding: 11px 19px;
-
-            border-radius: 4px;
+            color: var(--terracotta);
 
             font-size: 13px;
 
-            transition: 0.25s ease;
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
         }
 
-        .contact-link:hover {
-            border-color: var(--accent);
+        .contact-card a {
+            font-size: 18px;
 
-            color: var(--accent);
+            font-weight: bold;
+
+            word-break: break-word;
         }
 
+        .contact-card a:hover {
+            color: var(--terracotta);
+        }
 
-        /* =========================================
+        /* =========================
            FOOTER
-        ========================================= */
+        ========================= */
 
         footer {
-            border-top: 1px solid var(--border);
+            border-top: 1px solid var(--beige);
 
-            max-width: 1200px;
+            padding: 30px 25px;
 
-            margin: auto;
+            text-align: center;
 
-            padding: 25px 35px;
+            color: var(--muted);
 
-            display: flex;
-
-            justify-content: space-between;
-
-            color: var(--gray);
-
-            font-size: 12px;
+            font-size: 14px;
         }
 
+        /* =========================
+           MOBILE
+        ========================= */
 
-        /* =========================================
-           RESPONSIVE
-        ========================================= */
+        @media (max-width: 850px) {
 
-        @media(max-width: 900px) {
-
-            nav {
+            .nav-container {
+                flex-direction: column;
                 gap: 15px;
             }
 
-            .about {
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .about-grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
 
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .project {
-                grid-template-columns: 70px 1fr;
-            }
-
-            .project-description {
-                grid-column: 2;
-            }
-
-            .github-section {
-                margin: 30px 20px;
-            }
-        }
-
-
-        @media(max-width: 650px) {
-
-            .navbar {
-                padding: 17px 20px;
-            }
-
-            nav {
-                display: none;
-            }
-
-            .hero {
-                padding: 80px 20px;
-            }
-
-            .hero h1 {
-                font-size: 58px;
-
-                letter-spacing: -3px;
-            }
-
-            .section {
-                padding: 80px 20px;
-            }
-
-            .section-title {
-                font-size: 38px;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .project {
+            .projects {
                 grid-template-columns: 1fr;
-
-                gap: 12px;
             }
 
-            .project-description {
-                grid-column: auto;
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
 
             .education {
+                padding: 40px 25px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            section {
+                padding: 70px 20px;
+            }
+
+            .hero {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .skills-grid {
                 grid-template-columns: 1fr;
-
-                gap: 10px;
             }
 
-            .github-section {
-                padding: 45px 25px;
-
-                flex-direction: column;
-
-                align-items: flex-start;
+            .nav-links {
+                font-size: 13px;
             }
 
-            footer {
-                flex-direction: column;
-
-                gap: 8px;
-
-                padding: 25px 20px;
+            .btn {
+                width: 100%;
+                text-align: center;
             }
         }
 
     </style>
 </head>
 
-
 <body>
 
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
 
-<!-- =========================================
-     NAVIGATION
-========================================= -->
+    <nav>
+        <div class="nav-container">
 
-<header>
-
-    <div class="navbar">
-
-        <a href="#home" class="logo">
-            <span>S</span>ANOBAR.
-        </a>
-
-        <nav>
-
-            <a href="#about">
-                About
+            <a href="#home" class="logo">
+                Syeda<span>.</span>
             </a>
 
-            <a href="#skills">
-                Skills
-            </a>
-
-            <a href="#projects">
-                Projects
-            </a>
-
-            <a href="#education">
-                Education
-            </a>
-
-            <a href="#contact" class="nav-button">
-                Contact
-            </a>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-<!-- =========================================
-     HERO
-========================================= -->
-
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <div class="intro">
-            Software Engineer · Web Developer
-        </div>
-
-        <h1>
-            Syeda<br>
-            <span>Sanobar.</span>
-        </h1>
-
-        <div class="hero-role">
-            Engineering student building with code.
-        </div>
-
-        <p class="hero-description">
-            I am passionate about software development, web technologies,
-            databases and data-driven applications. I enjoy turning ideas
-            into practical digital solutions while continuously developing
-            my technical skills.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#projects"
-               class="button primary-button">
-                Explore My Work →
-            </a>
-
-            <a href="https://github.com/syedasanobar789-art"
-               target="_blank"
-               class="button outline-button">
-                GitHub ↗
-            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
         </div>
-
-        <div class="hero-line"></div>
-
-    </div>
-
-</section>
+    </nav>
 
 
-<!-- =========================================
-     ABOUT
-========================================= -->
+    <!-- =========================
+         HOME
+    ========================= -->
 
-<section class="section" id="about">
+    <header class="hero" id="home">
 
-    <div class="section-number">
-        01 — About
-    </div>
+        <div class="hero-content">
 
-    <h2 class="section-title">
-        A little about me.
-    </h2>
+            <div class="small-title">
+                Portfolio / 2026
+            </div>
 
-    <p class="section-intro">
-        I believe good software starts with understanding a problem
-        and ends with creating a solution that people can actually use.
-    </p>
+            <h1>
+                Syeda<br>
+                <span>Sanobar.</span>
+            </h1>
 
-
-    <div class="about">
-
-        <div class="about-text">
+            <h2>
+                Software Engineer & Web Developer
+            </h2>
 
             <p>
-                I am currently pursuing engineering and developing my
-                foundation in software engineering, web development,
-                databases and data science.
+                I am a Data Science Engineering student passionate about
+                software development, web technologies, databases and
+                building practical digital solutions.
             </p>
 
-            <p>
-                My learning journey includes programming with Java and
-                Python, developing web applications, working with SQL
-                and MongoDB, and building practical academic projects.
-            </p>
+            <div class="buttons">
 
-            <p>
-                I enjoy learning by building. Every project gives me
-                an opportunity to understand technology more deeply
-                and improve the way I approach problems.
-            </p>
+                <a href="#projects" class="btn btn-primary">
+                    View My Work
+                </a>
 
-            <div class="quote">
-                "Learn. Build. Improve. Repeat."
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+
             </div>
 
         </div>
 
+    </header>
 
-        <div class="profile-info">
 
-            <div class="info-row">
+    <!-- =========================
+         ABOUT
+    ========================= -->
 
-                <span class="info-label">
-                    Role
-                </span>
+    <section id="about">
 
-                <span class="info-value">
-                    Software Engineer
-                </span>
+        <div class="section-header">
+
+            <div>
+                <div class="section-number">01 / ABOUT</div>
+
+                <h2 class="section-title">
+                    About Me
+                </h2>
+            </div>
+
+        </div>
+
+        <div class="about-grid">
+
+            <div>
+                <div class="about-label">
+                    Who I Am
+                </div>
+            </div>
+
+            <div class="about-text">
+
+                <p>
+                    I am currently pursuing engineering in
+                    <strong>Data Science Engineering</strong>.
+                    I am interested in software engineering,
+                    web development, databases and data-driven
+                    applications.
+                </p>
+
+                <br>
+
+                <p>
+                    I enjoy learning new technologies and creating
+                    projects that solve practical problems. My goal
+                    is to continuously improve my technical skills
+                    and build useful, user-friendly applications.
+                </p>
 
             </div>
 
+        </div>
 
-            <div class="info-row">
-
-                <span class="info-label">
-                    Specialization
-                </span>
-
-                <span class="info-value">
-                    Web Development
-                </span>
-
-            </div>
+    </section>
 
 
-            <div class="info-row">
+    <!-- =========================
+         SKILLS
+    ========================= -->
 
-                <span class="info-label">
+    <section id="skills">
+
+        <div class="section-header">
+
+            <div>
+                <div class="section-number">02 / SKILLS</div>
+
+                <h2 class="section-title">
                     Technologies
-                </span>
-
-                <span class="info-value">
-                    Java · Python · SQL
-                </span>
-
-            </div>
-
-
-            <div class="info-row">
-
-                <span class="info-label">
-                    Location
-                </span>
-
-                <span class="info-value">
-                    Karnataka, India
-                </span>
-
+                </h2>
             </div>
 
         </div>
 
-    </div>
+        <div class="skills-grid">
 
-</section>
-
-
-<!-- =========================================
-     SKILLS
-========================================= -->
-
-<section class="section" id="skills">
-
-    <div class="section-number">
-        02 — Skills
-    </div>
-
-    <h2 class="section-title">
-        My technical toolkit.
-    </h2>
-
-    <p class="section-intro">
-        Technologies and concepts I am learning and applying
-        through projects and hands-on development.
-    </p>
-
-
-    <div class="skills-grid">
-
-
-        <div class="skill">
-
-            <div class="skill-number">
-                01
-            </div>
-
-            <h3>
+            <div class="skill">
+                <span class="skill-number">01</span>
                 Java
-            </h3>
-
-            <p>
-                Object-oriented programming
-            </p>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-number">
-                02
             </div>
 
-            <h3>
+            <div class="skill">
+                <span class="skill-number">02</span>
                 Python
-            </h3>
-
-            <p>
-                Programming & development
-            </p>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-number">
-                03
             </div>
 
-            <h3>
-                HTML / CSS
-            </h3>
-
-            <p>
-                Front-end development
-            </p>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-number">
-                04
+            <div class="skill">
+                <span class="skill-number">03</span>
+                HTML & CSS
             </div>
 
-            <h3>
+            <div class="skill">
+                <span class="skill-number">04</span>
                 JavaScript
-            </h3>
-
-            <p>
-                Web interactivity
-            </p>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-number">
-                05
             </div>
 
-            <h3>
+            <div class="skill">
+                <span class="skill-number">05</span>
                 MySQL
-            </h3>
-
-            <p>
-                Relational databases
-            </p>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-number">
-                06
             </div>
 
-            <h3>
+            <div class="skill">
+                <span class="skill-number">06</span>
                 MongoDB
-            </h3>
-
-            <p>
-                NoSQL databases
-            </p>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-number">
-                07
             </div>
 
-            <h3>
+            <div class="skill">
+                <span class="skill-number">07</span>
                 Flask
-            </h3>
-
-            <p>
-                Python web framework
-            </p>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-number">
-                08
             </div>
 
-            <h3>
+            <div class="skill">
+                <span class="skill-number">08</span>
                 Data Science
-            </h3>
-
-            <p>
-                Data & analytics
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     PROJECTS
-========================================= -->
-
-<section class="section" id="projects">
-
-    <div class="section-number">
-        03 — Selected Work
-    </div>
-
-    <h2 class="section-title">
-        Projects.
-    </h2>
-
-    <p class="section-intro">
-        A selection of academic and practical projects that
-        represent my learning and development journey.
-    </p>
-
-
-    <!-- PROJECT 1 -->
-
-    <article class="project">
-
-        <div class="project-number">
-            01
-        </div>
-
-        <div>
-
-            <h3 class="project-title">
-                KisanLink
-            </h3>
-
-        </div>
-
-        <div>
-
-            <p class="project-description">
-                A farmer-to-buyer web platform focused on strengthening
-                market linkages and providing agricultural market-price
-                information.
-            </p>
-
-            <div class="technologies">
-
-                <span>Python</span>
-                <span>Flask</span>
-                <span>MySQL</span>
-                <span>HTML</span>
-                <span>CSS</span>
-
             </div>
 
-            <a href="https://github.com/syedasanobar789-art"
-               target="_blank"
-               class="project-link">
-                View on GitHub →
-            </a>
-
         </div>
 
-    </article>
+    </section>
 
 
-    <!-- PROJECT 2 -->
+    <!-- =========================
+         PROJECTS
+    ========================= -->
 
-    <article class="project">
+    <section id="projects">
 
-        <div class="project-number">
-            02
-        </div>
+        <div class="section-header">
 
-        <div>
+            <div>
+                <div class="section-number">03 / PROJECTS</div>
 
-            <h3 class="project-title">
-                Lost & Found Portal
-            </h3>
-
-        </div>
-
-        <div>
-
-            <p class="project-description">
-                A college management web application designed to help
-                users report and manage lost-and-found items using
-                a database-backed system.
-            </p>
-
-            <div class="technologies">
-
-                <span>Python</span>
-                <span>Flask</span>
-                <span>MySQL</span>
-                <span>DBMS</span>
-
+                <h2 class="section-title">
+                    Selected Work
+                </h2>
             </div>
 
-            <a href="https://github.com/syedasanobar789-art"
-               target="_blank"
-               class="project-link">
-                View on GitHub →
-            </a>
+        </div>
+
+        <div class="projects">
+
+            <!-- Project 1 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    KisanLink
+                </h3>
+
+                <p>
+                    A web-based platform designed to connect
+                    farmers and buyers while providing market
+                    price information and helping improve
+                    agricultural market linkages.
+                </p>
+
+                <a
+                    href="https://github.com/syedasanobar789-art"
+                    target="_blank"
+                    class="project-link"
+                >
+                    View on GitHub →
+                </a>
+
+            </article>
+
+
+            <!-- Project 2 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    Lost & Found Portal
+                </h3>
+
+                <p>
+                    A college management web application for
+                    reporting, searching and managing lost and
+                    found items using a database system.
+                </p>
+
+                <a
+                    href="https://github.com/syedasanobar789-art"
+                    target="_blank"
+                    class="project-link"
+                >
+                    View on GitHub →
+                </a>
+
+            </article>
+
+
+            <!-- Project 3 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>
+                    Social Media Management
+                </h3>
+
+                <p>
+                    A MongoDB-based project demonstrating
+                    user registration, posts, comments, likes,
+                    following and messaging functionality.
+                </p>
+
+                <a
+                    href="https://github.com/syedasanobar789-art"
+                    target="_blank"
+                    class="project-link"
+                >
+                    View on GitHub →
+                </a>
+
+            </article>
 
         </div>
 
-    </article>
+    </section>
 
 
-    <!-- PROJECT 3 -->
+    <!-- =========================
+         EDUCATION
+    ========================= -->
 
-    <article class="project">
+    <section id="education">
 
-        <div class="project-number">
-            03
-        </div>
+        <div class="education">
 
-        <div>
-
-            <h3 class="project-title">
-                Social Media Management
-            </h3>
-
-        </div>
-
-        <div>
-
-            <p class="project-description">
-                A MongoDB-based academic project covering users,
-                posts, comments, likes, following and messaging
-                concepts.
-            </p>
-
-            <div class="technologies">
-
-                <span>MongoDB</span>
-                <span>NoSQL</span>
-                <span>CRUD</span>
-                <span>Database</span>
-
+            <div class="education-label">
+                04 / Education
             </div>
-
-            <a href="https://github.com/syedasanobar789-art"
-               target="_blank"
-               class="project-link">
-                View on GitHub →
-            </a>
-
-        </div>
-
-    </article>
-
-</section>
-
-
-<!-- =========================================
-     EDUCATION
-========================================= -->
-
-<section class="section" id="education">
-
-    <div class="section-number">
-        04 — Education
-    </div>
-
-    <h2 class="section-title">
-        Education.
-    </h2>
-
-    <p class="section-intro">
-        My academic background and current learning journey.
-    </p>
-
-
-    <div class="education">
-
-        <div class="education-year">
-            CURRENT
-        </div>
-
-        <div>
 
             <h3>
-                Engineering
+                Data Science Engineering
             </h3>
 
             <p>
                 Adichunchanagiri Institute of Technology,
-                affiliated with Visvesvaraya Technological University.
+                affiliated with Visvesvaraya Technological University (VTU).
             </p>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <br><br>
+    <!-- =========================
+         GITHUB
+    ========================= -->
 
-
-    <div class="education">
-
-        <div class="education-year">
-            LEARNING
-        </div>
-
-        <div>
-
-            <h3>
-                Software & Technology
-            </h3>
-
-            <p>
-                Java · Python · Web Development · DBMS · MongoDB ·
-                Data Science
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     GITHUB
-========================================= -->
-
-<section class="github-section">
-
-    <div>
+    <section class="github-section">
 
         <div class="section-number">
-            Open Source & Projects
+            05 / GITHUB
         </div>
 
         <h2>
-            See what I'm building.
+            Explore My Code
         </h2>
 
         <p>
-            Explore my GitHub profile to see my repositories,
-            academic projects and development work.
+            Visit my GitHub profile to explore my projects,
+            programming practice and development work.
         </p>
 
-    </div>
-
-
-    <a href="https://github.com/syedasanobar789-art"
-       target="_blank"
-       class="button github-button">
-        Visit GitHub ↗
-    </a>
-
-</section>
-
-
-<!-- =========================================
-     CONTACT
-========================================= -->
-
-<section class="section contact" id="contact">
-
-    <div class="section-number">
-        05 — Contact
-    </div>
-
-    <h2>
-        Let's <span>connect.</span>
-    </h2>
-
-    <p>
-        Interested in technology, software development and
-        learning through real-world projects.
-    </p>
-
-
-    <div class="contact-links">
-
-        <a href="https://github.com/syedasanobar789-art"
-           target="_blank"
-           class="contact-link">
-            GitHub ↗
+        <a
+            href="https://github.com/syedasanobar789-art"
+            target="_blank"
+            class="btn btn-primary"
+        >
+            Visit GitHub →
         </a>
 
-
-        <!--
-        Replace # with your actual LinkedIn profile URL
-        -->
-
-        <a href="#"
-           class="contact-link">
-            LinkedIn ↗
-        </a>
+    </section>
 
 
-        <!--
-        Replace the email address with your actual email
-        -->
+    <!-- =========================
+         CONTACT
+    ========================= -->
 
-        <a href="mailto:your-email@example.com"
-           class="contact-link">
-            Email ↗
-        </a>
+    <section id="contact">
 
-    </div>
+        <div class="section-header">
 
-</section>
+            <div>
+                <div class="section-number">06 / CONTACT</div>
+
+                <h2 class="section-title">
+                    Let's Connect
+                </h2>
+            </div>
+
+        </div>
+
+        <div class="contact-grid">
+
+            <!-- Email -->
+
+            <div class="contact-card">
+
+                <span>Email</span>
+
+                <a href="mailto:syedasanobar789@gmail.com">
+                    syedasanobar789@gmail.com
+                </a>
+
+            </div>
 
 
-<!-- =========================================
-     FOOTER
-========================================= -->
+            <!-- LinkedIn -->
 
-<footer>
+            <div class="contact-card">
 
-    <span>
-        © 2026 Syeda Sanobar
-    </span>
+                <span>LinkedIn</span>
 
-    <span>
-        Software Engineer · Web Developer
-    </span>
+                <a
+                    href="https://www.linkedin.com/in/syeda-sanobar-7164ab373/"
+                    target="_blank"
+                >
+                    LinkedIn Profile →
+                </a>
 
-</footer>
+            </div>
+
+
+            <!-- GitHub -->
+
+            <div class="contact-card">
+
+                <span>GitHub</span>
+
+                <a
+                    href="https://github.com/syedasanobar789-art"
+                    target="_blank"
+                >
+                    github.com/syedasanobar789-art →
+                </a>
+
+            </div>
+
+
+            <!-- Portfolio -->
+
+            <div class="contact-card">
+
+                <span>Portfolio</span>
+
+                <a
+                    href="https://syedasanobar789-art.github.io"
+                    target="_blank"
+                >
+                    syedasanobar789-art.github.io →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026 Syeda Sanobar.
+        Built with HTML & CSS.
+
+    </footer>
 
 
 </body>
