@@ -1,0 +1,22 @@
+body {
+    background: #F7F4EE;
+    color: #171717;
+}
+
+.navbar {
+    border-bottom: 1px solid #DED6C8;
+}
+
+.btn {
+    background: #C65D45;
+    color: white;
+}
+
+.card {
+    background: #FCFAF6;
+    border: 1px solid #DED6C8;
+}
+
+.highlight {
+    color: #C65D45;
+}
