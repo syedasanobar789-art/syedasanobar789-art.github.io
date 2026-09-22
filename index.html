@@ -59,7 +59,7 @@
             top: 0;
             z-index: 1000;
 
-            background: rgba(247, 244, 238, 0.95);
+            background: rgba(247, 244, 238, 0.96);
             backdrop-filter: blur(10px);
 
             border-bottom: 1px solid var(--beige);
@@ -111,6 +111,7 @@
 
             max-width: 1150px;
             margin: auto;
+
             padding: 100px 25px;
 
             display: flex;
@@ -123,8 +124,10 @@
 
         .small-title {
             color: var(--terracotta);
+
             font-size: 14px;
             font-weight: bold;
+
             letter-spacing: 3px;
             text-transform: uppercase;
 
@@ -133,7 +136,9 @@
 
         .hero h1 {
             font-size: clamp(48px, 8vw, 92px);
+
             line-height: 0.95;
+
             letter-spacing: -5px;
 
             margin-bottom: 25px;
@@ -145,6 +150,7 @@
 
         .hero h2 {
             font-size: clamp(22px, 4vw, 38px);
+
             font-weight: 500;
 
             margin-bottom: 25px;
@@ -154,6 +160,7 @@
             max-width: 700px;
 
             color: var(--muted);
+
             font-size: 18px;
 
             margin-bottom: 35px;
@@ -171,11 +178,14 @@
             padding: 14px 24px;
 
             border: 1px solid var(--terracotta);
+
             border-radius: 4px;
 
             font-weight: 700;
 
             transition: 0.3s;
+
+            cursor: pointer;
         }
 
         .btn-primary {
@@ -198,12 +208,13 @@
         }
 
         /* =========================
-           GENERAL SECTION
+           SECTIONS
         ========================= */
 
         section {
             max-width: 1150px;
             margin: auto;
+
             padding: 100px 25px;
         }
 
@@ -215,17 +226,21 @@
             margin-bottom: 50px;
 
             border-bottom: 1px solid var(--beige);
+
             padding-bottom: 20px;
         }
 
         .section-number {
             color: var(--terracotta);
+
             font-size: 14px;
+
             font-weight: bold;
         }
 
         .section-title {
             font-size: clamp(35px, 5vw, 55px);
+
             letter-spacing: -2px;
         }
 
@@ -235,20 +250,27 @@
 
         .about-grid {
             display: grid;
+
             grid-template-columns: 1fr 1.5fr;
+
             gap: 70px;
         }
 
         .about-label {
             font-size: 14px;
+
             color: var(--terracotta);
+
             font-weight: bold;
+
             text-transform: uppercase;
+
             letter-spacing: 2px;
         }
 
         .about-text {
             font-size: 20px;
+
             line-height: 1.7;
         }
 
@@ -262,7 +284,9 @@
 
         .skills-grid {
             display: grid;
+
             grid-template-columns: repeat(4, 1fr);
+
             gap: 15px;
         }
 
@@ -283,7 +307,7 @@
 
             border-color: var(--terracotta);
 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
         }
 
         .skill-number {
@@ -302,7 +326,9 @@
 
         .projects {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 25px;
         }
 
@@ -326,7 +352,7 @@
 
             border-color: var(--terracotta);
 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
         }
 
         .project-number {
@@ -367,9 +393,10 @@
 
         .education {
             background: var(--charcoal);
+
             color: white;
 
-            max-width: 1150px;
+            max-width: 1100px;
 
             margin: 0 auto;
 
@@ -437,9 +464,9 @@
         .contact-grid {
             display: grid;
 
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
 
-            gap: 30px;
+            gap: 20px;
         }
 
         .contact-card {
@@ -448,6 +475,21 @@
             border: 1px solid var(--beige);
 
             padding: 30px;
+
+            min-height: 160px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--terracotta);
+
+            transform: translateY(-5px);
         }
 
         .contact-card span {
@@ -463,15 +505,19 @@
 
             letter-spacing: 2px;
 
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .contact-card a {
-            font-size: 18px;
+            font-size: 17px;
 
             font-weight: bold;
 
             word-break: break-word;
+
+            color: var(--charcoal);
+
+            transition: 0.3s;
         }
 
         .contact-card a:hover {
@@ -502,18 +548,23 @@
 
             .nav-container {
                 flex-direction: column;
+
                 gap: 15px;
             }
 
             .nav-links {
                 gap: 15px;
+
                 flex-wrap: wrap;
+
                 justify-content: center;
             }
 
             .hero {
                 min-height: auto;
+
                 padding-top: 80px;
+
                 padding-bottom: 80px;
             }
 
@@ -523,6 +574,7 @@
 
             .about-grid {
                 grid-template-columns: 1fr;
+
                 gap: 30px;
             }
 
@@ -564,6 +616,7 @@
 
             .btn {
                 width: 100%;
+
                 text-align: center;
             }
         }
@@ -573,11 +626,13 @@
 
 <body>
 
+
     <!-- =========================
          NAVIGATION
     ========================= -->
 
     <nav>
+
         <div class="nav-container">
 
             <a href="#home" class="logo">
@@ -585,14 +640,31 @@
             </a>
 
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
             </ul>
 
         </div>
+
     </nav>
 
 
@@ -618,9 +690,9 @@
             </h2>
 
             <p>
-                I am a Data Science Engineering student passionate about
-                software development, web technologies, databases and
-                building practical digital solutions.
+                I am a Data Science Engineering student passionate
+                about software development, web technologies,
+                databases and building practical digital solutions.
             </p>
 
             <div class="buttons">
@@ -649,11 +721,15 @@
         <div class="section-header">
 
             <div>
-                <div class="section-number">01 / ABOUT</div>
+
+                <div class="section-number">
+                    01 / ABOUT
+                </div>
 
                 <h2 class="section-title">
                     About Me
                 </h2>
+
             </div>
 
         </div>
@@ -661,9 +737,11 @@
         <div class="about-grid">
 
             <div>
+
                 <div class="about-label">
                     Who I Am
                 </div>
+
             </div>
 
             <div class="about-text">
@@ -701,11 +779,15 @@
         <div class="section-header">
 
             <div>
-                <div class="section-number">02 / SKILLS</div>
+
+                <div class="section-number">
+                    02 / SKILLS
+                </div>
 
                 <h2 class="section-title">
                     Technologies
                 </h2>
+
             </div>
 
         </div>
@@ -766,18 +848,23 @@
         <div class="section-header">
 
             <div>
-                <div class="section-number">03 / PROJECTS</div>
+
+                <div class="section-number">
+                    03 / PROJECTS
+                </div>
 
                 <h2 class="section-title">
                     Selected Work
                 </h2>
+
             </div>
 
         </div>
 
         <div class="projects">
 
-            <!-- Project 1 -->
+
+            <!-- KISANLINK -->
 
             <article class="project">
 
@@ -792,13 +879,14 @@
                 <p>
                     A web-based platform designed to connect
                     farmers and buyers while providing market
-                    price information and helping improve
-                    agricultural market linkages.
+                    price information and improving agricultural
+                    market linkages.
                 </p>
 
                 <a
                     href="https://github.com/syedasanobar789-art"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="project-link"
                 >
                     View on GitHub →
@@ -807,7 +895,7 @@
             </article>
 
 
-            <!-- Project 2 -->
+            <!-- LOST AND FOUND -->
 
             <article class="project">
 
@@ -828,6 +916,7 @@
                 <a
                     href="https://github.com/syedasanobar789-art"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="project-link"
                 >
                     View on GitHub →
@@ -836,7 +925,7 @@
             </article>
 
 
-            <!-- Project 3 -->
+            <!-- SOCIAL MEDIA -->
 
             <article class="project">
 
@@ -857,6 +946,7 @@
                 <a
                     href="https://github.com/syedasanobar789-art"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="project-link"
                 >
                     View on GitHub →
@@ -887,7 +977,8 @@
 
             <p>
                 Adichunchanagiri Institute of Technology,
-                affiliated with Visvesvaraya Technological University (VTU).
+                affiliated with Visvesvaraya Technological
+                University (VTU).
             </p>
 
         </div>
@@ -917,6 +1008,7 @@
         <a
             href="https://github.com/syedasanobar789-art"
             target="_blank"
+            rel="noopener noreferrer"
             class="btn btn-primary"
         >
             Visit GitHub →
@@ -934,73 +1026,73 @@
         <div class="section-header">
 
             <div>
-                <div class="section-number">06 / CONTACT</div>
+
+                <div class="section-number">
+                    06 / CONTACT
+                </div>
 
                 <h2 class="section-title">
                     Let's Connect
                 </h2>
+
             </div>
 
         </div>
 
+
         <div class="contact-grid">
 
-            <!-- Email -->
+
+            <!-- EMAIL BUTTON -->
 
             <div class="contact-card">
 
-                <span>Email</span>
+                <span>
+                    Email
+                </span>
 
-                <a href="mailto:syedasanobar789@gmail.com">
-                    syedasanobar789@gmail.com
+                <a
+                    href="mailto:syedasanobar789@gmail.com"
+                >
+                    📧 Email Me →
                 </a>
 
             </div>
 
 
-            <!-- LinkedIn -->
+            <!-- LINKEDIN BUTTON -->
 
             <div class="contact-card">
 
-                <span>LinkedIn</span>
+                <span>
+                    LinkedIn
+                </span>
 
                 <a
                     href="https://www.linkedin.com/in/syeda-sanobar-7164ab373/"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
-                    LinkedIn Profile →
+                    💼 Open LinkedIn →
                 </a>
 
             </div>
 
 
-            <!-- GitHub -->
+            <!-- GITHUB BUTTON -->
 
             <div class="contact-card">
 
-                <span>GitHub</span>
+                <span>
+                    GitHub
+                </span>
 
                 <a
                     href="https://github.com/syedasanobar789-art"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
-                    github.com/syedasanobar789-art →
-                </a>
-
-            </div>
-
-
-            <!-- Portfolio -->
-
-            <div class="contact-card">
-
-                <span>Portfolio</span>
-
-                <a
-                    href="https://syedasanobar789-art.github.io"
-                    target="_blank"
-                >
-                    syedasanobar789-art.github.io →
+                    💻 Open GitHub →
                 </a>
 
             </div>
